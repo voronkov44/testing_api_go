@@ -6,6 +6,7 @@ import (
 	"gorm.io/gorm"
 	"os"
 	"project1/internal/link"
+	"project1/internal/stat"
 	"project1/internal/user"
 )
 
@@ -18,5 +19,5 @@ func main() {
 	if err != nil {
 		panic("failed to connect database")
 	}
-	db.AutoMigrate(&link.Link{}, &user.User{})
+	db.AutoMigrate(&link.Link{}, &user.User{}, &stat.Stat{})
 }
